@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malla Curricular - Ingeniería de Sistemas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Malla Curricular - Ingeniería de Sistemas</h1>
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-box available"></div>
+                    <span>Disponible</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box blocked"></div>
+                    <span>Bloqueada</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box completed"></div>
+                    <span>Aprobada</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="curriculum-grid">
+            <!-- Semestre 1 -->
+            <div class="semester">
+                <h2>Semestre 1</h2>
+                <div class="subjects">
+                    <div class="subject available" data-subject="matematicas-basicas" data-unlocks="calculo-monovariable,algebra-lineal">
+                        <span class="subject-name">Matemáticas Básicas</span>
+                    </div>
+                    <div class="subject available" data-subject="deporte-salud" data-unlocks="">
+                        <span class="subject-name">Deporte y Salud</span>
+                    </div>
+                    <div class="subject available" data-subject="taller-ingenieria-1" data-unlocks="">
+                        <span class="subject-name">Taller de Ingeniería I</span>
+                    </div>
+                    <div class="subject available" data-subject="insercion-vida-universitaria" data-unlocks="">
+                        <span class="subject-name">Inserción a la Vida Universitaria</span>
+                    </div>
+                    <div class="subject available" data-subject="introduccion-ingenieria-sistemas" data-unlocks="electiva-complementaria-1">
+                        <span class="subject-name">Introducción a la Ingeniería de Sistemas</span>
+                    </div>
+                    <div class="subject available" data-subject="fundamentos-programacion-imperativa" data-unlocks="fundamentos-programacion-oo,matematicas-discretas-1">
+                        <span class="subject-name">Fundamentos de Programación Imperativa</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Semestre 2 -->
+            <div class="semester">
+                <h2>Semestre 2</h2>
+                <div class="subjects">
+                    <div class="subject blocked" data-subject="calculo-monovariable" data-requires="matematicas-basicas" data-unlocks="calculo-multivariable,probabilidad-estadistica,fisica-1">
+                        <span class="subject-name">Cálculo Monovariable</span>
+                    </div>
+                    <div class="subject blocked" data-subject="algebra-lineal" data-requires="matematicas-basicas" data-unlocks="simulacion-computacion-numerica">
+                        <span class="subject-name">Álgebra Lineal</span>
+                    </div>
+                    <div class="subject blocked" data-subject="fundamentos-programacion-oo" data-requires="fundamentos-programacion-imperativa" data-unlocks="fundamentos-programacion-eventos,bases-datos,sistemas-operativos">
+                        <span class="subject-name">Fundamentos de Programación OO</span>
+                    </div>
+                    <div class="subject blocked" data-subject="matematicas-discretas-1" data-requires="fundamentos-programacion-imperativa" data-unlocks="matematicas-discretas-2">
+                        <span class="subject-name">Matemáticas Discretas I</span>
+                    </div>
+                    <div class="subject available" data-subject="comp-prod-textos" data-unlocks="">
+                        <span class="subject-name">Comp. y Prod. de Textos Académicos</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Semestre 3 -->
+            <div class="semester">
+                <h2>Semestre 3</h2>
+                <div class="subjects">
+                    <div class="subject blocked" data-subject="calculo-multivariable" data-requires="calculo-monovariable" data-unlocks="ecuaciones-diferenciales,ingenieria-economica">
+                        <span class="subject-name">Cálculo Multivariable</span>
+                    </div>
+                    <div class="subject blocked" data-subject="fisica-1" data-requires="calculo-monovariable" data-unlocks="simulacion-computacion-numerica">
+                        <span class="subject-name">Física I + Lab.</span>
+                    </div>
+                    <div class="subject blocked" data-subject="fundamentos-programacion-eventos" data-requires="fundamentos-programacion-oo" data-unlocks="analisis-diseno-algoritmos-1,fundamentos-programacion-funcional">
+                        <span class="subject-name">Fundamentos de Programación orientada a eventos</span>
+                    </div>
+                    <div class="subject blocked" data-subject="matematicas-discretas-2" data-requires="matematicas-discretas-1" data-unlocks="analisis-diseno-algoritmos-1">
+                        <span class="subject-name">Matemáticas Discretas II</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Semestre 4 -->
+            <div class="semester">
+                <h2>Semestre 4</h2>
+                <div class="subjects">
+                    <div class="subject blocked" data-subject="probabilidad-estadistica" data-requires="calculo-monovariable" data-unlocks="simulacion-estadistica-numerica,inteligencia-artificial">
+                        <span class="subject-name">Probabilidad y Estadística</span>
+                    </div>
+                    <div class="subject blocked" data-subject="ecuaciones-diferenciales" data-requires="calculo-multivariable" data-unlocks="simulacion-computacion-numerica">
+                        <span class="subject-name">Ecuaciones Diferenciales</span>
+                    </div>
+                    <div class="subject blocked" data-subject="bases-datos" data-requires="fundamentos-programacion-oo" data-unlocks="desarrollo-software-1,introduccion-ciencia-datos">
+                        <span class="subject-name">Bases de Datos</span>
+                    </div>
+                    <div class="subject blocked" data-subject="sistemas-operativos" data-requires="fundamentos-programacion-oo" data-unlocks="fundamentos-redes">
+                        <span class="subject-name">Sistemas Operativos</span>
+                    </div>
+                    <div class="subject blocked" data-subject="fundamentos-programacion-funcional" data-requires="fundamentos-programacion-eventos" data-unlocks="fundamentos-interpretacion-compilacion,inteligencia-artificial">
+                        <span class="subject-name">Fundamentos de programación lineal y concurrente</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Semestre 5 -->
+            <div class="semester">
+                <h2>Semestre 5</h2>
+                <div class="subjects">
+                    <div class="subject blocked" data-subject="simulacion-computacion-numerica" data-requires="algebra-lineal,fisica-1,ecuaciones-diferenciales" data-unlocks="ciberseguridad">
+                        <span class="subject-name">Simulación y computación Numérica</span>
+                    </div>
+                    <div class="subject blocked" data-subject="analisis-diseno-algoritmos-1" data-requires="fundamentos-programacion-eventos,matematicas-discretas-2" data-unlocks="analisis-diseno-algoritmos-2">
+                        <span class="subject-name">Análisis y Diseño de Algoritmos I</span>
+                    </div>
+                    <div class="subject blocked" data-subject="fundamentos-redes" data-requires="sistemas-operativos" data-unlocks="infraestructuras-paralelas,ciberseguridad">
+                        <span class="subject-name">Fundamentos de Redes</span>
+                    </div>
+                    <div class="subject blocked" data-subject="fundamentos-interpretacion-compilacion" data-requires="fundamentos-programacion-funcional" data-unlocks="analisis-diseno-algoritmos-2">
+                        <span class="subject-name">Fundamentos de interpretación y compilación de LP</span>
+                    </div>
+                    <div class="subject blocked" data-subject="desarrollo-software-1" data-requires="bases-datos" data-unlocks="desarrollo-software-2,proyecto-integrador-1">
+                        <span class="subject-name">Desarrollo de Software I</span>
+                    </div>
+                    <div class="subject blocked" data-subject="ingenieria-economica" data-requires="calculo-multivariable" data-unlocks="">
+                        <span class="subject-name">Ingeniería económica</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Semestre 6 -->
+            <div class="semester">
+                <h2>Semestre 6</h2>
+                <div class="subjects">
+                    <div class="subject blocked" data-subject="desarrollo-software-2" data-requires="desarrollo-software-1" data-unlocks="desarrollo-software-3,desarrollo-aplicaciones-moviles,introduccion-gestion-proyectos">
+                        <span class="subject-name">Desarrollo de Software II</span>
+                    </div>
+                    <div class="subject blocked" data-subject="inteligencia-artificial" data-requires="probabilidad-estadistica,fundamentos-programacion-funcional" data-unlocks="introduccion-ciencia-datos">
+                        <span class="subject-name">Inteligencia Artificial</span>
+                    </div>
+                    <div class="subject blocked" data-subject="proyecto-integrador-1" data-requires="desarrollo-software-1" data-unlocks="proyecto-integrador-2">
+                        <span class="subject-name">Proyecto Integrador I</span>
+                    </div>
+                    <div class="subject blocked" data-subject="analisis-diseno-algoritmos-2" data-requires="analisis-diseno-algoritmos-1,fundamentos-interpretacion-compilacion" data-unlocks="seminario-trabajo-grado">
+                        <span class="subject-name">Análisis y diseño de algoritmos 2</span>
+                    </div>
+                    <div class="subject blocked" data-subject="infraestructuras-paralelas" data-requires="fundamentos-redes" data-unlocks="">
+                        <span class="subject-name">Infraestructuras paralelas y Distribuidas</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Semestre 7 -->
+            <div class="semester">
+                <h2>Semestre 7</h2>
+                <div class="subjects">
+                    <div class="subject blocked" data-subject="desarrollo-software-3" data-requires="desarrollo-software-2" data-unlocks="proyecto-integrador-2">
+                        <span class="subject-name">Desarrollo de Software III</span>
+                    </div>
+                    <div class="subject blocked" data-subject="desarrollo-aplicaciones-moviles" data-requires="desarrollo-software-2" data-unlocks="">
+                        <span class="subject-name">Desarrollo de Aplicaciones para dispositivos móviles</span>
+                    </div>
+                    <div class="subject blocked" data-subject="introduccion-ciencia-datos" data-requires="inteligencia-artificial,bases-datos" data-unlocks="proyecto-integrador-2">
+                        <span class="subject-name">Introducción a la Ciencia de los Datos</span>
+                    </div>
+                    <div class="subject blocked" data-subject="ciberseguridad" data-requires="simulacion-computacion-numerica,fundamentos-redes" data-unlocks="">
+                        <span class="subject-name">Ciberseguridad</span>
+                    </div>
+                    <div class="subject available" data-subject="seminario-constitucion" data-unlocks="">
+                        <span class="subject-name">Seminario de constitución, legislación y ética profesional</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Semestre 8 -->
+            <div class="semester">
+                <h2>Semestre 8</h2>
+                <div class="subjects">
+                    <div class="subject blocked" data-subject="proyecto-integrador-2" data-requires="proyecto-integrador-1,desarrollo-software-3,introduccion-ciencia-datos" data-unlocks="">
+                        <span class="subject-name">Proyecto integrador 2</span>
+                    </div>
+                    <div class="subject blocked" data-subject="introduccion-gestion-proyectos" data-requires="desarrollo-software-2" data-unlocks="innovacion-emprendimiento">
+                        <span class="subject-name">Introducción a la gestión de proyectos de software</span>
+                    </div>
+                    <div class="subject available" data-subject="electiva-profesional-1" data-unlocks="">
+                        <span class="subject-name">Electiva Profesional I</span>
+                    </div>
+                    <div class="subject blocked" data-subject="seminario-trabajo-grado" data-requires="analisis-diseno-algoritmos-2" data-unlocks="trabajo-grado-1">
+                        <span class="subject-name">Seminario de trabajo de grado</span>
+                    </div>
+                    <div class="subject available" data-subject="impactos-ambientales" data-unlocks="">
+                        <span class="subject-name">Impactos ambientales</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Semestre 9 -->
+            <div class="semester">
+                <h2>Semestre 9</h2>
+                <div class="subjects">
+                    <div class="subject available" data-subject="electiva-profesional-2" data-unlocks="">
+                        <span class="subject-name">Electiva Profesional 2</span>
+                    </div>
+                    <div class="subject available" data-subject="electiva-profesional-3" data-unlocks="">
+                        <span class="subject-name">Electiva Profesional III</span>
+                    </div>
+                    <div class="subject blocked" data-subject="innovacion-emprendimiento" data-requires="introduccion-gestion-proyectos" data-unlocks="">
+                        <span class="subject-name">Innovación y Emprendimiento en Ingeniería</span>
+                    </div>
+                    <div class="subject blocked" data-subject="trabajo-grado-1" data-requires="seminario-trabajo-grado" data-unlocks="trabajo-grado-2">
+                        <span class="subject-name">Trabajo de Grado I</span>
+                    </div>
+                    <div class="subject available" data-subject="diseno-contenido-interfaces" data-unlocks="">
+                        <span class="subject-name">Diseño de contenido para interfaces de usuario</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Semestre 10 -->
+            <div class="semester">
+                <h2>Semestre 10</h2>
+                <div class="subjects">
+                    <div class="subject available" data-subject="electiva-profesional-4" data-unlocks="">
+                        <span class="subject-name">Electiva Profesional IV</span>
+                    </div>
+                    <div class="subject blocked" data-subject="trabajo-grado-2" data-requires="trabajo-grado-1" data-unlocks="">
+                        <span class="subject-name">Trabajo de grado 2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-info">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-text">
+                <span id="completedCount">0</span> de <span id="totalCount">0</span> materias completadas
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
