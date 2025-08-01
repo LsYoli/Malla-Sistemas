@@ -73,6 +73,35 @@ function approveSubject(subjectId) {
     setTimeout(() => {
         subject.element.classList.remove('pulse');
     }, 800);
+    
+    // Desbloquear materias dependientes
+    unlockDependentSubjects(subjectId);
+}
+
+// Desaprobar materia
+function unapproveSubject(subjectId) {
+    const subject = subjectData[subjectId];
+    
+    if (!subject || !subject.completed) return;
+    
+    // Verificar si hay materias dependientes aprobadas
+    const dependentSubjects = findDependentSubjects(subjectId);
+    const approvedDependents = dependentSubjects.filter(id => subjectData[id]?.completed);
+    
+    if (approvedDependents.length > 0) {
+        showDependentWarning(subjectId, approvedDependents);
+        return;
+    }
+    
+    // Desaprobar la materia
+    subject.completed = false;
+    completedSubjects.delete(subjectId);
+    
+    // Efectos visuales
+    subject.element.classList.add('pulse');
+    setTimeout(() => {
+        subject.element.classList.remove('pulse');
+    }, 800);
 }
 
 // Desbloquear materias dependientes
@@ -421,32 +450,3 @@ document.addEventListener('contextmenu', function(e) {
         });
     }, 10);
 });
-    }, 800);
-    
-    // Desbloquear materias dependientes
-    unlockDependentSubjects(subjectId);
-}
-
-// Desaprobar materia
-function unapproveSubject(subjectId) {
-    const subject = subjectData[subjectId];
-    
-    if (!subject || !subject.completed) return;
-    
-    // Verificar si hay materias dependientes aprobadas
-    const dependentSubjects = findDependentSubjects(subjectId);
-    const approvedDependents = dependentSubjects.filter(id => subjectData[id]?.completed);
-    
-    if (approvedDependents.length > 0) {
-        showDependentWarning(subjectId, approvedDependents);
-        return;
-    }
-    
-    // Desaprobar la materia
-    subject.completed = false;
-    completedSubjects.delete(subjectId);
-    
-    // Efectos visuales
-    subject.element.classList.add('pulse');
-    setTimeout(() => {
-        subject.element.classList.remove('pulse');
